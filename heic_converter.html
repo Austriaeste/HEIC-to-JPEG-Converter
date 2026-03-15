@@ -120,13 +120,6 @@ function renderFileList() {
 convertBtn.addEventListener('click', async () => {
     if (selectedFiles.length === 0) return;
 
-    // もしライブラリが読み込めていない場合のチェック
-    if (typeof heic2any === 'undefined') {
-        status.textContent = "エラー：ライブラリが正しく貼り付けられていません。";
-        status.className = "error";
-        return;
-    }
-
     status.textContent = "変換中...（少々お待ちください）";
     status.className = "loading";
     convertBtn.disabled = true;
